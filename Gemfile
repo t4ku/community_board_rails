@@ -10,6 +10,7 @@ gem "haml-rails"
 gem "strong_parameters"
 gem "cache_digests"
 gem "active_model_serializers"
+gem 'doorkeeper', "~> 0.6.7"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
