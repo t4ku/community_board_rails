@@ -9,14 +9,21 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-    params.require(:post).permit(:text)
-    post = current_resource_owner.posts.create!(params[:post])
-    puts "hoge"
-    puts post
+    user = current_resource_owner
+    post = Post.new(post_params)
+    community = Community.find(params[:community_id])
+    post.user = user
+    post.community = community
+    post.save!
+
     respond_with post
   end
 
   def current_resource_owner
     User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
+  end
+
+  def post_params
+    params.require(:post).permit(:text)
   end
 end
