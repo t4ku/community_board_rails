@@ -47,7 +47,7 @@ feature 'API' do
       user_json["avatar_url"].should == "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email.downcase)}"
     end
 
-    pending 'create' do
+    scenario 'create' do
       post "/api/v1/communities/#{community.id}/posts", post: { text: "foo"}, access_token: token.token
       user.posts.count.should == 1
       user.posts.first.text.should == "foo"
