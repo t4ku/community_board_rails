@@ -11,16 +11,16 @@ gem "strong_parameters"
 gem "cache_digests"
 gem "active_model_serializers"
 gem 'doorkeeper', "~> 0.6.7"
-gem "twitter-bootstrap-rails", ">= 2.1.0"
 
-group :assets do
+#group :assets do
+  gem "twitter-bootstrap-rails", ">= 2.1.0"
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem "less-rails"
   gem "libv8", "~> 3.11.8"
   gem "therubyracer"
-end
+#end
 
 group :development do
   gem "heroku"
