@@ -21,7 +21,7 @@ feature 'API' do
 
   context "communities" do
     let!(:community) { create(:community) }
-    pending 'index' do
+    scenario 'index' do
       get '/api/v1/communities'
       json["communities"].size.should == 1
       community_json = json["communities"].first
@@ -34,7 +34,7 @@ feature 'API' do
   context "posts" do
     let!(:community) { create(:community) }
 
-    pending 'index' do
+    scenario 'index' do
       community_post = create(:post, user: user, community: community)
       get "/api/v1/communities/#{community.id}/posts"
       json["posts"].size.should == 1

@@ -5,6 +5,8 @@ class CommunitiesController < ApplicationController
 
   def index
     @communities = Community.all
+    respond_with @communities
+
   end
 
   def new
